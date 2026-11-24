@@ -12,7 +12,7 @@
 
 ## Layout and interaction states
 
-[Describe layout behavior across screen sizes and how primary flows present empty, loading, error, and success states where relevant.]
+[Describe shared content edges, spacing, and primary action placement. Note how layouts adapt to small screens, long content, and the keyboard, and how they present empty, loading, error, and success states where relevant.]
 
 ## Multi-step flows
 
