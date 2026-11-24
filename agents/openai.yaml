@@ -1,4 +1,4 @@
 interface:
   display_name: "Expo Native App"
-  short_description: "Build native iOS and Android apps with current Expo guides"
-  default_prompt: "Use $expo-native-app to build an Expo app for iOS and Android."
+  short_description: "Initialize new Expo apps for iOS and Android"
+  default_prompt: "Use $expo-native-app to scaffold a new Expo app for iOS and Android."

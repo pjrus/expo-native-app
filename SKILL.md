@@ -1,17 +1,20 @@
 ---
 name: expo-native-app
-description: Design, scaffold, or extend Expo and React Native apps for iOS and Android using current official guides, Expo Router, shared feature logic, and platform-native controls. Use for new mobile apps and for screens or navigation in existing Expo projects.
+description: Initialize a new Expo app for iOS and Android. Use only when asked to create, bootstrap, or scaffold a new Expo app, including initial setup from a starter template. Do not trigger for features, fixes, redesigns, or upgrades in an existing app.
 ---
 
 # Expo apps for iOS and Android
 
+## Confirm initialization scope
+
+Use this workflow when the user is starting a new Expo app, including one in an existing repository or from a starter template. If invoked for ongoing work on an established app, skip this workflow and follow that project's instructions. Treat the first scaffold, project conventions, and initial documentation as the scope of this skill.
+
 ## Start with the project and live guides
 
-1. Read the applicable AGENTS.md, ARCHITECTURE.md, package manifest, lockfile, and a representative feature. Follow the project's current phase. For a design brief, describe the screen flow, interaction states, and platform controls with mock data. An explicit build request authorizes implementation within its scope.
-2. **Fetch fresh documentation on every invocation**, including design-only tasks. Open [Expo's current agent instructions](https://docs.expo.dev/agents.md) and [documentation index](https://docs.expo.dev/llms.txt), then fetch and read the specific guides that apply. Search snippets and a previously fetched index are insufficient. Fetch additional guides as the task introduces new APIs.
-3. For an existing app, read the major version of the `expo` dependency. Resolve ambiguous ranges or workspace dependencies from the lockfile or installed package. Open `https://docs.expo.dev/versions/v<major>.0.0/` and the matching reference pages for the packages and controls in use. Check platform support, imports, minimum OS versions, and development-build requirements. Use the installed React Native version's official reference for RN-specific APIs. Keep the SDK pinned unless upgrading is in scope.
-4. For a new app, fetch the current **Create a project** guide from the index. Follow its stable template and package-manager instructions, including any SDK transition guidance. After scaffolding, read the generated manifest and apply the same version check before writing feature code.
-5. For platform design choices, open the relevant [Apple Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/) and [Android design guidance](https://developer.android.com/design). Link the specific guides used in the handoff and identify the SDK. If a fetch fails, try another official format or versioned source. Report any remaining gap and continue with work independent of the unverified API.
+1. Read any existing project instructions and inspect the target directory for a starter scaffold.
+2. Fetch fresh [Expo agent instructions](https://docs.expo.dev/agents.md) and the [Expo documentation index](https://docs.expo.dev/llms.txt) on every initialization. Read the current **Create a project** guide and any task-specific guides. Follow the stable template and package-manager instructions, including any SDK transition guidance.
+3. Read the generated manifest or the starter's manifest to identify the Expo SDK major. Use the lockfile or installed package if the range is ambiguous. Open `https://docs.expo.dev/versions/v<major>.0.0/` and the matching reference pages before writing feature code. Verify imports, platform support, minimum OS versions, and development-build requirements. Use the installed React Native version's official reference for React Native APIs.
+4. For platform design choices, open the relevant [Apple Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/) and [Android design guidance](https://developer.android.com/design). Link the specific guides used in the handoff and identify the SDK. If a fetch fails, try another official format or versioned source. Report any remaining gap and continue with work independent of the unverified API.
 
 ## Clarify new app scope
 
@@ -21,7 +24,7 @@ If the brief already establishes the scope, proceed. Resolve routine implementat
 
 ## Document a new repository
 
-When initializing a new app or repository, write these files at the app repository root as part of scaffolding:
+When initializing the new Expo app, write these files at the app repository root as part of scaffolding:
 
 - Use [the README template](assets/README.template.md) for `README.md`. Replace the generated starter README with app-specific setup, run, and verification instructions. Preserve any project-specific content that already exists.
 - Use [the architecture template](assets/ARCHITECTURE.template.md) for `ARCHITECTURE.md`. Record the implemented layout, route graph, platform boundaries, and state ownership so future changes have a reference.
