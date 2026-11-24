@@ -55,6 +55,16 @@ Read the bundled templates from the skill directory. Fill in the bracketed promp
 - Use semantic foregrounds and system tint on iOS, Material theme colors on Android, and shared theme tokens for custom surfaces. For the reference project's dark palette, use neutral black and charcoal. Let native navigation provide system chrome. Gate optional glass on availability and Reduce Transparency.
 - Preserve readable text at larger system font sizes, accessible labels and selection states, safe-area and system-bar insets, and keyboard access to form actions. For long collections, use a virtualized or native lazy list and stable item identifiers.
 
+## Design multi-step creation flows
+
+When an initial user flow has dependent choices, give each screen a distinct task. Use the app's own terms and combine steps when the form is short. A useful pattern is:
+
+1. **Choose context.** Collect the decisions that shape the later fields, such as the repository and branches for a pull request.
+2. **Enter details.** Show fields relevant to the earlier choice, keep that choice visible, and explain which inputs need correction before continuing.
+3. **Review and commit.** When review adds value, summarize the actual choices and details, let users go back to edit, and label the final action with what it does. For a submission, handle pending and failure states, prevent duplicates, and return to a useful destination on success.
+
+Use thin Expo Router stack routes and keep the step views and shared draft logic in the feature. Where progress helps, show the step name and position. Preserve the draft on back navigation, handle entry to later routes with missing prerequisites, and define when cancellation or completion clears the draft. Document the purpose, fields, and primary action of each step in `DESIGN.md`.
+
 ## Plan first-use permissions
 
 When an in-scope feature needs camera, location, notifications, or another device permission, read the current [Expo permissions guide](https://docs.expo.dev/guides/permissions/) and the SDK-matched module reference. Check the native configuration and runtime behavior on each target platform. Request only the access the feature needs.
@@ -71,4 +81,5 @@ Use the project runner (`bunx` with a Bun lockfile, otherwise follow the reposit
 - **Start cleanly.** Remove unused starter screens and assets, configure the app's name and identity from the brief, and verify the README's install and launch commands from a fresh checkout or clean copy. Run the project's lint and TypeScript checks.
 - **Check both platforms.** Launch on an iOS Simulator and an Android Emulator or representative devices. Check the first screen in light and dark mode, at larger text sizes, and around safe areas. Exercise keyboard behavior, modal dismissal, and platform back navigation where relevant. Check Metro and runtime logs. Capture one screenshot per platform when devices are available.
 - **Verify permission flows where applicable.** On both target platforms, test the initial prompt, grant and denial, and returning to the feature after denial. Use a build that reflects the app's native permission configuration.
+- **Verify multi-step flows where applicable.** Check validation before advancing, back navigation with the draft intact, and the final action. Exercise cancellation and retry when supported.
 - **Report the result.** State which flows and platforms you verified, share the screenshots you captured, and identify any checks you could not run.

@@ -14,6 +14,10 @@
 
 [Describe layout behavior across screen sizes and how primary flows present empty, loading, error, and success states where relevant.]
 
+## Multi-step flows
+
+[For each multi-step flow, list each screen's purpose, fields or choices, and primary action. Describe progress, validation, how users edit earlier choices, and what happens on completion or cancellation. Remove this section if it does not apply.]
+
 ## Device permissions
 
 [For each required permission, describe when the app asks, why it needs access, what stays usable after denial, and how the user can enable access later. Remove this section if it does not apply.]
