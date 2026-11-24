@@ -20,7 +20,7 @@ Use this workflow when the user is starting a new Expo app, including one in an 
 
 If the prompt leaves the app's purpose, intended users, core flows, or first-version scope unclear, ask the user a few focused questions before scaffolding or implementing the parts that depend on those answers. Ask only about gaps that would materially change the app. Group related questions, use plain language, and offer concrete options when helpful. Continue with independent work, such as checking the current Expo guides, while waiting for answers.
 
-If the brief already establishes the scope, proceed. Resolve routine implementation details using the project's conventions. Record the agreed scope in `product.md` and put any remaining decisions under Open product decisions.
+If the brief already establishes the scope, proceed. When offline use, accounts, sync, or distribution would change the initial scaffold, clarify the relevant choices. Resolve routine implementation details using the project's conventions. Record the agreed scope and setup decisions in `product.md`, put unresolved choices under Open product decisions, and document the implemented setup in `ARCHITECTURE.md`.
 
 ## Document a new repository
 
@@ -59,4 +59,9 @@ Read the bundled templates from the skill directory. Fill in the bracketed promp
 
 Use the project runner (`bunx` with a Bun lockfile, otherwise follow the repository convention). Install dependencies through `expo install` for SDK compatibility. For projects using Continuous Native Generation, configure native behavior through app configuration and config plugins. Build a development client when the native dependency or configuration requires it. For requested cloud builds, submissions, or updates, fetch the task-specific EAS guide before choosing commands.
 
-Run the project's lint and TypeScript checks after implementation. Exercise each changed flow on an iOS Simulator and an Android Emulator or representative devices. Check light and dark appearance, insets, text scaling, modal dismissal, platform back navigation, and Metro/runtime logs. Report which flows and platforms were exercised and identify unavailable checks explicitly.
+## First-run acceptance checklist
+
+- **Match the brief.** For a UI prototype, make the primary flow navigable with sample data. For a functional prototype, implement and exercise the smallest complete user flow with real behavior. Verify state survives a relaunch when persistence is in scope. For a scaffold-only brief, verify that the starter screen launches.
+- **Start cleanly.** Remove unused starter screens and assets, configure the app's name and identity from the brief, and verify the README's install and launch commands from a fresh checkout or clean copy. Run the project's lint and TypeScript checks.
+- **Check both platforms.** Launch on an iOS Simulator and an Android Emulator or representative devices. Check the first screen in light and dark mode, at larger text sizes, and around safe areas. Exercise keyboard behavior, modal dismissal, and platform back navigation where relevant. Check Metro and runtime logs. Capture one screenshot per platform when devices are available.
+- **Report the result.** State which flows and platforms you verified, share the screenshots you captured, and identify any checks you could not run.

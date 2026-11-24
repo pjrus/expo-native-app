@@ -25,7 +25,7 @@ git clone https://github.com/pjrus/expo-native-app.git ~/.codex/skills/expo-nati
 - Scaffolds new Expo apps using the current setup guide and documents the resulting project.
 - Organizes navigation with Expo Router and shares feature logic across platform views.
 - Favors SwiftUI controls on iOS and Jetpack Compose controls on Android where the SDK supports them.
-- Checks the implemented flows on both platforms when devices are available.
+- Uses a first-run checklist to verify clean setup, the initial user flow, and native UI on both platforms when devices are available.
 
 New projects receive a [README](assets/README.template.md), an [architecture document](assets/ARCHITECTURE.template.md), [repository instructions for coding agents](assets/AGENTS.template.md), a [design guide](assets/DESIGN.template.md), and a [product brief](assets/product.template.md). The skill fills in the templates using the brief and the actual scaffold.
 
