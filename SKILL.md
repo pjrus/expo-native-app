@@ -55,6 +55,12 @@ Read the bundled templates from the skill directory. Fill in the bracketed promp
 - Use semantic foregrounds and system tint on iOS, Material theme colors on Android, and shared theme tokens for custom surfaces. For the reference project's dark palette, use neutral black and charcoal. Let native navigation provide system chrome. Gate optional glass on availability and Reduce Transparency.
 - Preserve readable text at larger system font sizes, accessible labels and selection states, safe-area and system-bar insets, and keyboard access to form actions. For long collections, use a virtualized or native lazy list and stable item identifiers.
 
+## Plan first-use permissions
+
+When an in-scope feature needs camera, location, notifications, or another device permission, read the current [Expo permissions guide](https://docs.expo.dev/guides/permissions/) and the SDK-matched module reference. Check the native configuration and runtime behavior on each target platform. Request only the access the feature needs.
+
+Define the action that triggers the prompt and explain the benefit in context. Default to asking when the user starts the feature. Use a first-launch prompt only when access is needed for the initial task and the reason is clear. Decide what stays usable after denial, provide an alternative where practical, and offer a way to recover if access is needed later. When the platform can no longer prompt, explain how to enable access in Settings. Record the trigger, rationale, fallback, and recovery in `DESIGN.md`.
+
 ## Install and verify
 
 Use the project runner (`bunx` with a Bun lockfile, otherwise follow the repository convention). Install dependencies through `expo install` for SDK compatibility. For projects using Continuous Native Generation, configure native behavior through app configuration and config plugins. Build a development client when the native dependency or configuration requires it. For requested cloud builds, submissions, or updates, fetch the task-specific EAS guide before choosing commands.
@@ -64,4 +70,5 @@ Use the project runner (`bunx` with a Bun lockfile, otherwise follow the reposit
 - **Match the brief.** For a UI prototype, make the primary flow navigable with sample data. For a functional prototype, implement and exercise the smallest complete user flow with real behavior. Verify state survives a relaunch when persistence is in scope. For a scaffold-only brief, verify that the starter screen launches.
 - **Start cleanly.** Remove unused starter screens and assets, configure the app's name and identity from the brief, and verify the README's install and launch commands from a fresh checkout or clean copy. Run the project's lint and TypeScript checks.
 - **Check both platforms.** Launch on an iOS Simulator and an Android Emulator or representative devices. Check the first screen in light and dark mode, at larger text sizes, and around safe areas. Exercise keyboard behavior, modal dismissal, and platform back navigation where relevant. Check Metro and runtime logs. Capture one screenshot per platform when devices are available.
+- **Verify permission flows where applicable.** On both target platforms, test the initial prompt, grant and denial, and returning to the feature after denial. Use a build that reflects the app's native permission configuration.
 - **Report the result.** State which flows and platforms you verified, share the screenshots you captured, and identify any checks you could not run.

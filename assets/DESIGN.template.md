@@ -14,6 +14,10 @@
 
 [Describe layout behavior across screen sizes and how primary flows present empty, loading, error, and success states where relevant.]
 
+## Device permissions
+
+[For each required permission, describe when the app asks, why it needs access, what stays usable after denial, and how the user can enable access later. Remove this section if it does not apply.]
+
 ## Accessibility
 
 [Record conventions for focus, text scaling, contrast, touch targets, screen reader labels, and reduced motion.]
