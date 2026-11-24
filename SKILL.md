@@ -13,6 +13,12 @@ description: Design, scaffold, or extend Expo and React Native apps for iOS and 
 4. For a new app, fetch the current **Create a project** guide from the index. Follow its stable template and package-manager instructions, including any SDK transition guidance. After scaffolding, read the generated manifest and apply the same version check before writing feature code.
 5. For platform design choices, open the relevant [Apple Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/) and [Android design guidance](https://developer.android.com/design). Link the specific guides used in the handoff and identify the SDK. If a fetch fails, try another official format or versioned source. Report any remaining gap and continue with work independent of the unverified API.
 
+## Clarify new app scope
+
+If the prompt leaves the app's purpose, intended users, core flows, or first-version scope unclear, ask the user a few focused questions before scaffolding or implementing the parts that depend on those answers. Ask only about gaps that would materially change the app. Group related questions, use plain language, and offer concrete options when helpful. Continue with independent work, such as checking the current Expo guides, while waiting for answers.
+
+If the brief already establishes the scope, proceed. Resolve routine implementation details using the project's conventions. Record the agreed scope in `product.md` and put any remaining decisions under Open product decisions.
+
 ## Document a new repository
 
 When initializing a new app or repository, write these files at the app repository root as part of scaffolding:
