@@ -1,6 +1,8 @@
 # Expo Native App
 
-An agent skill for designing and building Expo apps for iOS and Android. It checks current Expo guides for each task and uses the app's installed SDK to choose the matching API references.
+This agent skill builds polished iOS and Android apps with Expo. It checks the latest Expo guides for each task and reads the API references that match your app's SDK.
+
+I’ve tuned the design defaults to my taste, including native controls, system navigation, and neutral dark themes. Fork it and make it your own. Change any of the design defaults, workflows, or templates to suit how you like to build.
 
 ## Install
 
