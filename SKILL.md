@@ -63,7 +63,9 @@ When an initial user flow has dependent choices, give each screen a distinct tas
 2. **Enter details.** Show fields relevant to the earlier choice, keep that choice visible, and explain which inputs need correction before continuing.
 3. **Review and commit.** When review adds value, summarize the actual choices and details, let users go back to edit, and label the final action with what it does. For a submission, handle pending and failure states, prevent duplicates, and return to a useful destination on success.
 
-Use thin Expo Router stack routes and keep the step views and shared draft logic in the feature. Where progress helps, show the step name and position. Preserve the draft on back navigation, handle entry to later routes with missing prerequisites, and define when cancellation or completion clears the draft. Document the purpose, fields, and primary action of each step in `DESIGN.md`.
+On iOS, push dedicated full-page Expo Router stack screens for add, edit, schedule, and other form submissions, including single-screen forms. Push each step for native Back navigation. Reserve redirects for invalid entry, such as a later step opened without its prerequisites. Use native dialogs or sheets for brief contextual interactions. See [presentation examples](references/swiftui-design.md#choose-a-page-dialog-or-sheet).
+
+Keep route files thin and place step views and shared draft logic in the feature. Where progress helps, show the step name and position. Preserve the draft on back navigation, handle entry to later routes with missing prerequisites, and define when cancellation or completion clears the draft. Document the purpose, fields, and primary action of each step in `DESIGN.md`.
 
 ## Plan first-use permissions
 

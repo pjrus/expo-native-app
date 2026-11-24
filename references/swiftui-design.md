@@ -18,6 +18,17 @@ Before choosing controls, use the app's installed Expo SDK to open its SwiftUI c
 - **Filterable list.** Place a segmented picker above the list for short options like All, Open, and Closed. Use a menu when labels get long. Keep the selection visible and update the rows in place. Show a concise empty state when the selected filter has no results.
 - **Create item.** Use native inputs in a grouped form. On a multi-step flow, keep the progress position and main action consistent and retain the draft when users go back. Put short review values in aligned rows and let descriptions wrap at full width. Keep the action reachable with the keyboard open and identify what needs correcting before users can continue.
 
+## Choose a page, dialog, or sheet
+
+| Presentation | Use it when | Example |
+| --- | --- | --- |
+| Full-page stack screen | The user enters, edits, or reviews information for submission, or works through multiple steps. | Add an item, create an issue or PR, or choose a time and save a schedule. |
+| Native alert or confirmation dialog | A brief prompt needs a clear decision or acknowledgement. | Confirm deletion, discard a draft, or explain a blocking error. |
+| Native sheet | A short, optional interaction benefits from keeping the originating screen visible and is easy to dismiss. | Preview a branch, show sharing options, or pick one value that returns immediately to the current screen. |
+| Native menu | The user needs a small set of actions for the current item. | Copy a link, change sorting, or open the full-page edit screen. |
+
+Use normal [Expo Router stack navigation](https://docs.expo.dev/router/advanced/stack/) for forms so Back returns to the prior screen with the draft intact. Use a [redirect](https://docs.expo.dev/router/reference/redirects/) to recover from a missing draft or invalid step. For overlays, use the platform's dismissal behavior and return the user to the originating context. See Apple's guidance on [sheets](https://developer.apple.com/design/human-interface-guidelines/sheets) and [alerts](https://developer.apple.com/design/human-interface-guidelines/alerts).
+
 ## Host the layout
 
 Build a coherent SwiftUI subtree for an iOS screen or section inside a sized `Host`. Use content sizing for intrinsically sized controls and give scrolling content a bounded viewport along its scroll axis. Keep SwiftUI imports in the iOS variant and share state and callbacks with the other platforms. Use `RNHostView` when a specialized React Native view needs to sit inside SwiftUI. See the [Expo Host reference](https://docs.expo.dev/versions/latest/sdk/ui/swift-ui/host/).

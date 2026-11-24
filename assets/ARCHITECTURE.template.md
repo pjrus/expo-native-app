@@ -8,7 +8,7 @@
 
 ## Navigation
 
-[Show the current route tree and identify the root layout, navigators, and main screen transitions.]
+[Show the current route tree and identify the root layout, navigators, and main screen transitions. Identify full-page form routes and where a contextual dialog or sheet is used.]
 
 ## Platform UI and theming
 
