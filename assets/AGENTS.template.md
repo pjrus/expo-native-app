@@ -15,8 +15,8 @@ This is an Expo and React Native app. See [Architecture](ARCHITECTURE.md) for th
 ## Navigation and platform UI
 
 - Keep Expo Router files thin and keep feature logic outside the route directory. Own shared state in platform-agnostic modules.
-- Prefer SDK-supported SwiftUI controls on iOS and Jetpack Compose controls on Android. Isolate platform imports, size native hosts, and keep selection state and callbacks shared.
-- Use platform navigation and theme conventions. Preserve safe areas, system back behavior, text scaling, and accessible control labels.
+- Prefer built-in native controls for standard interactions, using SDK-supported SwiftUI on iOS and Jetpack Compose on Android. Isolate platform imports, size native hosts, and keep selection state and callbacks shared.
+- Reuse the type scale in [Design](DESIGN.md) and keep eyebrow labels for context the heading does not convey. Use platform navigation and theme conventions. Preserve safe areas, system back behavior, text scaling, and accessible control labels.
 - Update [Architecture](ARCHITECTURE.md) when routes, platform boundaries, or state ownership change.
 
 ## Verification

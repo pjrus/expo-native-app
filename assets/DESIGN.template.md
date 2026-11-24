@@ -4,7 +4,7 @@
 
 ## Visual system
 
-[Document typography, semantic colors in light and dark mode, spacing, corner treatments, and iconography. Point to the source files for implemented tokens.]
+[Document the type scale by role, system text scaling, when eyebrow labels are useful, semantic colors in light and dark mode, spacing, corner treatments, and iconography. Point to the source files for implemented tokens.]
 
 ## Platform controls and navigation
 

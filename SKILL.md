@@ -50,13 +50,14 @@ Read the bundled templates from the skill directory. Fill in the bracketed promp
 | Show actions or confirm a choice | Menu, context menu, or confirmation dialog | Overflow menu, bottom sheet, or alert dialog according to the action |
 | Edit preferences | Inset-grouped sections with toggles | Grouped settings rows with switches |
 
-- Prefer SwiftUI via `@expo/ui/swift-ui` on iOS and Jetpack Compose via `@expo/ui/jetpack-compose` on Android where the installed SDK supports them. Isolate platform imports. Give each native subtree a sized Host using documented content sizing or layout constraints. Embed React Native content inside a native tree only where needed.
+- Prefer built-in native components for standard mobile interactions. Use SwiftUI via `@expo/ui/swift-ui` on iOS and Jetpack Compose via `@expo/ui/jetpack-compose` on Android where the installed SDK supports them. Use a shared or custom component when the native control cannot meet the interaction or accessibility needs. Isolate platform imports. Give each native subtree a sized Host using documented content sizing or layout constraints. Embed React Native content inside a native tree only where needed.
 - Use native tabs, headers, and back behavior. Preserve Android system back and iOS swipe-back across detail screens and dismissible presentations. Give a floating action button a distinct action.
 - Use semantic foregrounds and system tint on iOS, Material theme colors on Android, and shared theme tokens for custom surfaces. For the reference project's dark palette, use neutral black and charcoal. Let native navigation provide system chrome. Gate optional glass on availability and Reduce Transparency.
 - Preserve readable text at larger system font sizes, accessible labels and selection states, safe-area and system-bar insets, and keyboard access to form actions. For long collections, use a virtualized or native lazy list and stable item identifiers.
 
 ## Lay out the first screens
 
+- Define a small shared type scale for screen titles, section headings, body, and supporting text. Use native text styles or shared tokens and respect system text scaling. Use an eyebrow label above a heading only when it adds context the heading or navigation does not convey.
 - Decide the content order and one primary action per screen. Align headings, fields, and review rows to shared content edges. Use native insets and a small spacing scale. Group related content with spacing and reserve cards or borders for groups that need a boundary.
 - Keep progress, content edges, and action placement consistent across steps. Keep the active field and primary action reachable with the keyboard open. On review screens, follow entry order, use compact label-and-value rows for short answers, and give long text the full width.
 
