@@ -29,4 +29,4 @@ git clone https://github.com/pjrus/expo-native-app.git ~/.codex/skills/expo-nati
 
 New projects receive a [README](assets/README.template.md), an [architecture document](assets/ARCHITECTURE.template.md), [repository instructions for coding agents](assets/AGENTS.template.md), a [design guide](assets/DESIGN.template.md), and a [product brief](assets/product.template.md). The skill fills in the templates using the brief and the actual scaffold.
 
-See [SKILL.md](SKILL.md) for the full workflow.
+See [SKILL.md](SKILL.md) for the workflow and [SwiftUI design and behavior examples](references/swiftui-design.md) for iOS layouts and component choices.

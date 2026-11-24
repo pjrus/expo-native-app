@@ -41,16 +41,10 @@ Read the bundled templates from the skill directory. Fill in the bracketed promp
 - Keep feature models, draft state, data access, and callbacks shared. A feature hook can expose the same selected value and change handler to `.ios.tsx`, `.android.tsx`, and a web-capable `.tsx` fallback. Reuse a shared view when the interaction is already native on both platforms.
 - Keep common controls in `src/components/`, theme tokens in `src/constants/`, and fixtures in `src/data/` as needed. Give cross-feature state one owner. Keep state transitions independently testable. Update an existing architecture reference when navigation, state ownership, or platform boundaries change.
 
-## Design the same flow for each platform
+## Start iOS screens with SwiftUI
 
-| Interaction | iOS | Android |
-| --- | --- | --- |
-| Select one short filter | Segmented picker | Single-select segmented buttons |
-| Choose from longer labels | Menu-style picker | Exposed dropdown or selection dialog |
-| Show actions or confirm a choice | Menu, context menu, or confirmation dialog | Overflow menu, bottom sheet, or alert dialog according to the action |
-| Edit preferences | Inset-grouped sections with toggles | Grouped settings rows with switches |
+For iOS UI, read the [SwiftUI design and behavior examples](references/swiftui-design.md) before choosing the layout. Build screen sections, forms, lists, and controls with `@expo/ui/swift-ui` in the iOS variant. Compose them inside a sized `Host`. For each custom or shared iOS control, identify the SDK support, interaction, or accessibility need it covers. Use Jetpack Compose on Android where supported and share feature state across platforms.
 
-- Prefer built-in native components for standard mobile interactions. Use SwiftUI via `@expo/ui/swift-ui` on iOS and Jetpack Compose via `@expo/ui/jetpack-compose` on Android where the installed SDK supports them. Use a shared or custom component when the native control cannot meet the interaction or accessibility needs. Isolate platform imports. Give each native subtree a sized Host using documented content sizing or layout constraints. Embed React Native content inside a native tree only where needed.
 - Use native tabs, headers, and back behavior. Preserve Android system back and iOS swipe-back across detail screens and dismissible presentations. Give a floating action button a distinct action.
 - Use semantic foregrounds and system tint on iOS, Material theme colors on Android, and shared theme tokens for custom surfaces. For the reference project's dark palette, use neutral black and charcoal. Let native navigation provide system chrome. Gate optional glass on availability and Reduce Transparency.
 - Preserve readable text at larger system font sizes, accessible labels and selection states, safe-area and system-bar insets, and keyboard access to form actions. For long collections, use a virtualized or native lazy list and stable item identifiers.
@@ -85,7 +79,7 @@ Use the project runner (`bunx` with a Bun lockfile, otherwise follow the reposit
 
 - **Match the brief.** For a UI prototype, make the primary flow navigable with sample data. For a functional prototype, implement and exercise the smallest complete user flow with real behavior. Verify state survives a relaunch when persistence is in scope. For a scaffold-only brief, verify that the starter screen launches.
 - **Start cleanly.** Remove unused starter screens and assets, configure the app's name and identity from the brief, and verify the README's install and launch commands from a fresh checkout or clean copy. Run the project's lint and TypeScript checks.
-- **Check both platforms.** Launch on an iOS Simulator and an Android Emulator or representative devices. Check the first screen in light and dark mode and around safe areas. On a small screen, try long names, multiline text, and larger system text. Fix clipping, awkward wrapping, and uneven alignment. Exercise keyboard behavior, modal dismissal, and platform back navigation where relevant. Check Metro and runtime logs. Capture one screenshot per platform when devices are available.
+- **Check both platforms.** Launch on an iOS Simulator and an Android Emulator or representative devices. Check the first screen in light and dark mode and around safe areas. On a small screen, try long names, multiline text, and larger system text. Fix clipping, awkward wrapping, and uneven alignment. Exercise keyboard behavior, modal dismissal, and platform back navigation where relevant. Review custom iOS controls against the SDK's SwiftUI equivalents. Check Metro and runtime logs. Capture one screenshot per platform when devices are available.
 - **Verify permission flows where applicable.** On both target platforms, test the initial prompt, grant and denial, and returning to the feature after denial. Use a build that reflects the app's native permission configuration.
 - **Verify multi-step flows where applicable.** Check validation before advancing, back navigation with the draft intact, and the final action. Exercise cancellation and retry when supported.
 - **Report the result.** State which flows and platforms you verified, share the screenshots you captured, and identify any checks you could not run.
