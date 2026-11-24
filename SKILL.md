@@ -58,7 +58,7 @@ Read the bundled templates from the skill directory. Fill in the bracketed promp
 ## Lay out the first screens
 
 - Define a small shared type scale for screen titles, section headings, body, and supporting text. Use native text styles or shared tokens and respect system text scaling. Use an eyebrow label above a heading only when it adds context the heading or navigation does not convey.
-- Decide the content order and one primary action per screen. Align headings, fields, and review rows to shared content edges. Use native insets and a small spacing scale. Group related content with spacing and reserve cards or borders for groups that need a boundary.
+- Decide the content order and one primary action per screen. Align headings, fields, and review rows to shared content edges. Use native insets and a small spacing scale. Group related content with spacing or native sections. During visual review, flatten nested cards and remove redundant borders, decorative pills, repeated headings, and gradients or shadows that add no hierarchy. Reserve cards for content that needs its own boundary.
 - Keep progress, content edges, and action placement consistent across steps. Keep the active field and primary action reachable with the keyboard open. On review screens, follow entry order, use compact label-and-value rows for short answers, and give long text the full width.
 
 ## Design multi-step creation flows
