@@ -1,0 +1,30 @@
+# Expo Native App
+
+An agent skill for designing and building Expo apps for iOS and Android. It checks current Expo guides for each task and uses the app's installed SDK to choose the matching API references.
+
+## Install
+
+Clone this repository into your agent's personal skills directory. Keep the checkout named `expo-native-app`.
+
+| Agent | Checkout location | Invocation |
+| --- | --- | --- |
+| Codex | ~/.codex/skills/expo-native-app | `$expo-native-app` |
+| Claude Code | ~/.claude/skills/expo-native-app | `/expo-native-app` |
+| Antigravity | ~/.gemini/config/skills/expo-native-app | `/expo-native-app` |
+
+For example, with Codex:
+
+```sh
+git clone https://github.com/pjrus/expo-native-app.git ~/.codex/skills/expo-native-app
+```
+
+## What the skill does
+
+- Scaffolds new Expo apps using the current setup guide and documents the resulting project.
+- Organizes navigation with Expo Router and shares feature logic across platform views.
+- Favors SwiftUI controls on iOS and Jetpack Compose controls on Android where the SDK supports them.
+- Checks the implemented flows on both platforms when devices are available.
+
+New projects receive a [README](assets/README.template.md), an [architecture document](assets/ARCHITECTURE.template.md), and [repository instructions for coding agents](assets/AGENTS.template.md). The skill fills in the templates using the actual scaffold.
+
+See [SKILL.md](SKILL.md) for the full workflow.
