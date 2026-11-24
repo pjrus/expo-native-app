@@ -13,6 +13,16 @@ description: Design, scaffold, or extend Expo and React Native apps for iOS and 
 4. For a new app, fetch the current **Create a project** guide from the index. Follow its stable template and package-manager instructions, including any SDK transition guidance. After scaffolding, read the generated manifest and apply the same version check before writing feature code.
 5. For platform design choices, open the relevant [Apple Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/) and [Android design guidance](https://developer.android.com/design). Link the specific guides used in the handoff and identify the SDK. If a fetch fails, try another official format or versioned source. Report any remaining gap and continue with work independent of the unverified API.
 
+## Document a new repository
+
+When initializing a new app or repository, write these files at the app repository root as part of scaffolding:
+
+- Use [the README template](assets/README.template.md) for `README.md`. Replace the generated starter README with app-specific setup, run, and verification instructions. Preserve any project-specific content that already exists.
+- Use [the architecture template](assets/ARCHITECTURE.template.md) for `ARCHITECTURE.md`. Record the implemented layout, route graph, platform boundaries, and state ownership so future changes have a reference.
+- Use [the agent instructions template](assets/AGENTS.template.md) for `AGENTS.md`. Record the repo's conventions and the live documentation workflow. Merge with existing agent instructions where present.
+
+Read the bundled templates from the skill directory. Fill in the bracketed prompts from the app's manifest, lockfile, configuration, and source tree, then remove all template prompts. Verify commands against the project scripts and current official guides. Keep additional READMEs focused on setup or workflows that need their own documentation and link them from the root README. Before finishing, verify that the three root files exist, their links resolve, and their commands and paths match the scaffold.
+
 ## Organize by feature
 
 - Use Expo Router. In a fresh project, keep routes and navigator layouts under `src/app/`. A route such as `src/app/settings.tsx` can simply re-export `SettingsScreen` from `src/features/settings/`. Preserve an existing project's route root. Put providers at the narrowest layout that owns their lifetime.
