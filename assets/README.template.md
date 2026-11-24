@@ -18,5 +18,7 @@
 
 ## Project docs
 
+- [Product brief](product.md)
+- [Design guide](DESIGN.md)
 - [Architecture](ARCHITECTURE.md)
 - [Repository instructions for coding agents](AGENTS.md)

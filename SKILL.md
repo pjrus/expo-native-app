@@ -21,7 +21,10 @@ When initializing a new app or repository, write these files at the app reposito
 - Use [the architecture template](assets/ARCHITECTURE.template.md) for `ARCHITECTURE.md`. Record the implemented layout, route graph, platform boundaries, and state ownership so future changes have a reference.
 - Use [the agent instructions template](assets/AGENTS.template.md) for `AGENTS.md`. Record the repo's conventions and the live documentation workflow. Merge with existing agent instructions where present.
 
-Read the bundled templates from the skill directory. Fill in the bracketed prompts from the app's manifest, lockfile, configuration, and source tree, then remove all template prompts. Verify commands against the project scripts and current official guides. Keep additional READMEs focused on setup or workflows that need their own documentation and link them from the root README. Before finishing, verify that the three root files exist, their links resolve, and their commands and paths match the scaffold.
+- Use [the design template](assets/DESIGN.template.md) for `DESIGN.md`. Record the visual system, reusable controls, and interaction and accessibility conventions for iOS and Android.
+- Use [the product template](assets/product.template.md) for `product.md`. Capture the product purpose, intended users, primary flows, and the scope agreed for the current phase.
+
+Read the bundled templates from the skill directory. Fill in the bracketed prompts from the product brief, design references, and the app's manifest, lockfile, configuration, and source tree. Record unresolved product or design decisions as open questions, then remove all template prompts. Verify commands against the project scripts and current official guides. Keep additional READMEs focused on setup or workflows that need their own documentation and link them from the root README. Before finishing, verify that all five root files exist, their links resolve, and their commands and paths match the scaffold.
 
 ## Organize by feature
 
